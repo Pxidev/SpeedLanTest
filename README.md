@@ -1,1 +1,1 @@
-# SpeedLanTest-Server
+# SpeedLanTest Core

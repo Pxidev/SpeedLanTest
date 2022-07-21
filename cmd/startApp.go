@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"core/cmd/utils"
 	"core/cmd/vars"
 	"core/src/core"
 	"github.com/gookit/color"
@@ -21,12 +22,14 @@ _\ \ |_) |  __/  __/ (_| / /__| (_| | | | / / |  __/\__ \ |_
 
 	Port := getPort()
 
-	server := core.Server{
-		IP:      "0.0.0.0",
-		Port:    Port,
-		Version: vars.Version,
-	}
+	utils.ListenPort(Port, func() {
+		server := core.Server{
+			IP:      "0.0.0.0",
+			Port:    Port,
+			Version: vars.Version,
+		}
 
-	server.Run()
+		server.Run()
+	})
 
 }

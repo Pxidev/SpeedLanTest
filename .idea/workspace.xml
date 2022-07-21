@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3167558f-f359-4bc4-9709-fcd84126aed3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/args.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/utils/logs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/utils/regexp.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/route.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/utils/listenPort.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/startApp.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/startApp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/vars/vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/vars/vars.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/route.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -59,6 +60,11 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Proyectos\SpeedLanTest\Core" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />

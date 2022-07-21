@@ -1,10 +1,16 @@
+//go:generate statik -src=../../ui/dist -include=*.*
+
 package core
 
 import (
 	"core/cmd/utils"
+	_ "core/src/core/statik"
 	"core/src/routes"
-	"github.com/gin-gonic/gin"
-	cors "github.com/rs/cors/wrapper/gin"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/filesystem"
+	"github.com/gofiber/template/html"
+	"github.com/rakyll/statik/fs"
 )
 
 type Server struct {
@@ -14,21 +20,35 @@ type Server struct {
 }
 
 func (i *Server) Run() {
+	statik, err := fs.New()
+	if err != nil {
+		utils.SendLog("error", err.Error())
+	}
 
-	gin.SetMode(gin.ReleaseMode)
+	engine := html.NewFileSystem(statik, ".html")
 
-	r := gin.Default()
+	app := fiber.New(fiber.Config{
+		Prefork:               false,
+		CaseSensitive:         true,
+		StrictRouting:         true,
+		ServerHeader:          "Pixidev v" + i.Version,
+		DisableStartupMessage: true,
+		AppName:               "SpeedLanTest",
+		Views:                 engine,
+	})
 
-	r.Use(cors.AllowAll())
+	app.Use("/", filesystem.New(filesystem.Config{
+		Root: statik,
+	}))
+
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+	}))
+
+	routes.Router(app)
 
 	utils.SendLog("server", "Server started in port "+i.Port)
-	
-	routes.Setup(r)
 
-	err := r.Run(i.IP + ":" + i.Port)
-	if err != nil {
-		utils.SendLog("error", "El puerto "+i.Port+" no esta disponible")
-		return
-	}
+	app.Listen(":" + i.Port)
 
 }

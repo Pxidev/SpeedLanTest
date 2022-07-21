@@ -1,17 +1,10 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/monitor"
+)
 
-func Setup(r *gin.Engine) {
-	r.POST("/download", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"success": true,
-		})
-	})
-
-	r.POST("/upload", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"success": true,
-		})
-	})
+func Router(app *fiber.App) {
+	app.Get("/pxi/monitor", monitor.New())
 }

@@ -1,6 +1,10 @@
 package cmd
 
-import "github.com/gookit/color"
+import (
+	"core/cmd/vars"
+	"core/src/core"
+	"github.com/gookit/color"
+)
 
 func StartApp() {
 
@@ -10,7 +14,19 @@ func StartApp() {
 \ \| '_ \ / _ \/ _ \/ _´ |/ /  / _´ | '_ \ / /\/ _ \/ __| __|
 _\ \ |_) |  __/  __/ (_| / /__| (_| | | | / / |  __/\__ \ |_ 
 \__/ .__/ \___|\___|\__,_\____/\__,_|_| |_\/   \___||___/\__|
-   |_|</> <yellow>` + vars.Version + `</>
-`)
+   |_|</> 
+--------------------------------------------------------------
+		<cyan>Created by Pixidev</> - <yellow>v` + vars.Version + `</>
+	`)
+
+	Port := getPort()
+
+	server := core.Server{
+		IP:      "0.0.0.0",
+		Port:    Port,
+		Version: vars.Version,
+	}
+
+	server.Run()
 
 }

@@ -25,4 +25,5 @@ dist-ssr
 *.exe
 *.zip
 
+src/core/statik/
 .idea

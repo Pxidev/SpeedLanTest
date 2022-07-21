@@ -1,5 +1,3 @@
-//go:generate statik -src=../../ui/dist -include=*.*
-
 package core
 
 import (

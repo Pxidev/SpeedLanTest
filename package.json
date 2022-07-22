@@ -1,12 +1,13 @@
 {
   "name": "SpeedLanTest",
   "scripts": {
+    "preinstall": "npm i -g concurrently",
     "start:ui": "cd ui && npm i && npm run dev",
     "build:ui": "cd ui && npm i && npm run build",
     "zip": "Powershell.exe -ExecutionPolicy Unrestricted -command \"Compress-Archive .\\core.exe core_windows_amd64.exe.zip -update\"",
     "statik": "cd ./src/core/ && go generate -run \"statik -src=../../ui/dist -include=*.* -f\"",
     "start": "go generate ./api/server.go && go run .",
     "build": "npm run build:ui && npm run statik && go build . && npm run zip",
-    "dev": "concurrently \"go run .\" \"npn run start:ui\""
+    "dev": "concurrently \"go run . 3001\" \"npm run start:ui\""
   }
 }

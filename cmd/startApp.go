@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"core/cmd/utils"
-	"core/cmd/vars"
-	"core/src/core"
+	"SpeedLanTest/cmd/utils"
+	"SpeedLanTest/cmd/vars"
+	"SpeedLanTest/src/core"
 	"github.com/gookit/color"
 )
 

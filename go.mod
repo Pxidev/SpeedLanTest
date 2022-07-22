@@ -1,4 +1,4 @@
-module core
+module SpeedLanTest
 
 go 1.18
 

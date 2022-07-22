@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"core/cmd/utils"
+	"SpeedLanTest/cmd/utils"
 	"os"
 )
 

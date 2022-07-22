@@ -3,9 +3,9 @@
 package core
 
 import (
-	"core/cmd/utils"
-	_ "core/src/core/statik"
-	"core/src/routes"
+	"SpeedLanTest/cmd/utils"
+	_ "SpeedLanTest/src/core/statik"
+	"SpeedLanTest/src/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
@@ -35,6 +35,7 @@ func (i *Server) Run() {
 		DisableStartupMessage: true,
 		AppName:               "SpeedLanTest",
 		Views:                 engine,
+		BodyLimit:             100 * 1024 * 1024,
 	})
 
 	app.Use("/", filesystem.New(filesystem.Config{

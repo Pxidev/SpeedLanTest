@@ -1,7 +1,7 @@
 package main
 
 import (
-	"core/cmd"
+	"SpeedLanTest/cmd"
 )
 
 func main() {
